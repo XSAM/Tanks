@@ -16,7 +16,9 @@ public class UIDirectionControl : MonoBehaviour
 
     private void Update()
     {
+		//Debug.Log(m_RelativeRotation);
         if (m_UseRelativeRotation)
             transform.rotation = m_RelativeRotation;
+		//Debug.Log(transform.rotation);
     }
 }
