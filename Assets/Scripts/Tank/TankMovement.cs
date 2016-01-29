@@ -86,7 +86,8 @@ public class TankMovement : MonoBehaviour
 				m_MovementAudio.Play();
 			}
 		}
-		m_MovementAudio.pitch=Mathf.SmoothDamp(m_MovementAudio.pitch,instantAudioPitch,ref velocityTemp,audioPitchDampTime);
+		//m_MovementAudio.pitch=Mathf.SmoothDamp(m_MovementAudio.pitch,instantAudioPitch,ref velocityTemp,audioPitchDampTime);
+		m_MovementAudio.pitch=Mathf.Lerp(m_MovementAudio.pitch,instantAudioPitch,0.25f);
     }
 
 
