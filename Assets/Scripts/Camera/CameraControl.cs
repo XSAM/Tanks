@@ -31,7 +31,11 @@ public class CameraControl : MonoBehaviour
     {
         FindAveragePosition();
 
+		//Debug.Log("Bposition:"+transform.position);
         transform.position = Vector3.SmoothDamp(transform.position, m_DesiredPosition, ref m_MoveVelocity, m_DampTime);
+//		Debug.Log("velocity:"+m_MoveVelocity);
+//		Debug.Log("DesiredPosition:"+m_DesiredPosition);
+//		Debug.Log("Aposition:"+transform.position);
     }
 
 
@@ -61,13 +65,16 @@ public class CameraControl : MonoBehaviour
     private void Zoom()
     {
         float requiredSize = FindRequiredSize();
+		//Debug.Log("BorthographicSize:"+m_Camera.orthographicSize);
         m_Camera.orthographicSize = Mathf.SmoothDamp(m_Camera.orthographicSize, requiredSize, ref m_ZoomSpeed, m_DampTime);
+		//Debug.Log("AorthographicSize:"+m_Camera.orthographicSize);
     }
 
 
     private float FindRequiredSize()
     {
-        Vector3 desiredLocalPos = transform.InverseTransformPoint(m_DesiredPosition);
+		Vector3 desiredLocalPos = m_DesiredPosition;//transform.InverseTransformPoint(m_DesiredPosition);
+		//Debug.Log("desiredLocalPos:"+desiredLocalPos);
 
         float size = 0f;
 
@@ -76,7 +83,7 @@ public class CameraControl : MonoBehaviour
             if (!m_Targets[i].gameObject.activeSelf)
                 continue;
 
-            Vector3 targetLocalPos = transform.InverseTransformPoint(m_Targets[i].position);
+			Vector3 targetLocalPos = m_Targets[i].position;//transform.InverseTransformPoint(m_Targets[i].position);
 
             Vector3 desiredPosToTarget = targetLocalPos - desiredLocalPos;
 

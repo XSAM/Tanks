@@ -9,6 +9,7 @@ public class TankMovement : MonoBehaviour
     public AudioClip m_EngineIdling;       
     public AudioClip m_EngineDriving;      
     public float m_PitchRange = 0.2f;
+	public float audioPitchDampTime=0.2f;
 
     
     private string m_MovementAxisName;     
@@ -19,6 +20,7 @@ public class TankMovement : MonoBehaviour
     private float m_OriginalPitch;         
 
 	private float instantAudioPitch;
+	private float velocityTemp;
 
 
     private void Awake()
@@ -84,7 +86,7 @@ public class TankMovement : MonoBehaviour
 				m_MovementAudio.Play();
 			}
 		}
-		m_MovementAudio.pitch=Mathf.SmoothStep(m_MovementAudio.pitch,instantAudioPitch,0.35f);
+		m_MovementAudio.pitch=Mathf.SmoothDamp(m_MovementAudio.pitch,instantAudioPitch,ref velocityTemp,audioPitchDampTime);
     }
 
 
