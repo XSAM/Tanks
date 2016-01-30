@@ -11,7 +11,7 @@ public class TankMovement : MonoBehaviour
     public float m_PitchRange = 0.2f;
     public float audioPitchDampTime = 0.2f;
 
-    
+
     private string m_MovementAxisName;
     private string m_TurnAxisName;
     private Rigidbody m_Rigidbody;
@@ -26,7 +26,6 @@ public class TankMovement : MonoBehaviour
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
-        velocityTemp=1f;
     }
 
 
@@ -52,9 +51,9 @@ public class TankMovement : MonoBehaviour
         m_OriginalPitch = instantAudioPitch = m_MovementAudio.pitch;
 
 
-        //m_MovementAudio.Play(); 
+        //m_MovementAudio.Play();
     }
-    
+
 
     private void Update()
     {
