@@ -16,10 +16,10 @@ public class TankShooting : MonoBehaviour
 
 
     /*
-    private string m_FireButton;         
-    private float m_CurrentLaunchForce;  
-    private float m_ChargeSpeed;         
-    private bool m_Fired;                
+    private string m_FireButton;
+    private float m_CurrentLaunchForce;
+    private float m_ChargeSpeed;
+    private bool m_Fired;
 
 
     private void OnEnable()

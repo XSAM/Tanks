@@ -54,6 +54,7 @@ public class TankHealth : MonoBehaviour
 
         m_FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, m_CurrentHealth / m_StartingHealth);
 
+
     }
 
 
