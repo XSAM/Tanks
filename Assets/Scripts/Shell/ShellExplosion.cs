@@ -25,7 +25,7 @@ public class ShellExplosion : MonoBehaviour
         for (int i = 0; i < colliders.Length; ++i)
         {
             Rigidbody targetRigidbody = colliders[i].GetComponent<Rigidbody>();
-            if (!targetRigidbody )//== null)
+            if (!targetRigidbody)//== null)
                 continue;
 
             targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
@@ -62,7 +62,7 @@ public class ShellExplosion : MonoBehaviour
         float damage = relativeDistance * m_MaxDamage;
 
         // Make sure that the minimum damage is always 0.
-        damage = Mathf.Max (0f, damage);
+        damage = Mathf.Max(0f, damage);
 
         return damage;
     }
