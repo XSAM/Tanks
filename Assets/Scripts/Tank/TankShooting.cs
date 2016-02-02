@@ -36,7 +36,7 @@ public class TankShooting : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Track the current state of the fire button and make decisions based on the current launch force.
         m_AimSlider.value = 0;
@@ -79,7 +79,8 @@ public class TankShooting : MonoBehaviour
         m_Fired = true;
 
         Rigidbody shellInstance = Instantiate(m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
-        shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward;
+        shellInstance.velocity = (m_CurrentLaunchForce) * m_FireTransform.forward;
+        Debug.Log("Shell:" + shellInstance.velocity);
 
         m_ShootingAudio.clip = m_FireClip;
         m_ShootingAudio.Play();
