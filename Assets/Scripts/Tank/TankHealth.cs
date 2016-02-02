@@ -37,6 +37,8 @@ public class TankHealth : MonoBehaviour
     {
         // Adjust the tank's current health, update the UI based on the new health and check whether or not the tank is dead.
         m_CurrentHealth -= amount;
+        //Debug.Log("Damage:" + amount);
+        //Debug.Log(m_CurrentHealth);
 
         SetHealthUI();
 
